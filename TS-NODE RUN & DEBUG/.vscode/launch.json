@@ -25,6 +25,15 @@
             "args": ["--inspect", "${workspaceFolder}/src/index.ts"],
             "cwd": "${workspaceRoot}",
             "skipFiles": ["<node_internals>/**", "node_modules/**"]
+        },
+        {
+            "name": "ts-node 1",
+            "type": "node",
+            "request": "launch",
+            "runtimeArgs": ["run","debug-ts"],
+            "runtimeExecutable": "npm",
+            "cwd": "${workspaceRoot}",
+            "skipFiles": ["<node_internals>/**", "node_modules/**"]
         }
     ]
 }
