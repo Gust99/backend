@@ -1,6 +1,6 @@
 {
     "env": {
-        "browser": true,
+        "browser": false,
         "es2021": true
     },
     "extends": [
@@ -15,6 +15,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "quotes": ["error","double"]
+        "quotes": ["error","double"],
+        "semi": ["error","always"]
     }
 }
