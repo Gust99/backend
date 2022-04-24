@@ -10,9 +10,10 @@ function* fibonacci() {
         x = y;
         y = y + aux;
     }
-    
 }
+
 let fiboGen = fibonacci();
+
 console.log(fiboGen.next());
 console.log(fiboGen.next());
 console.log(fiboGen.next());

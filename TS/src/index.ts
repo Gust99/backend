@@ -37,3 +37,4 @@ let sudorm = (targetUser: Usr, params: string) => {
 }
 
 sudorm(sudoer, "r");
+
