@@ -1,5 +1,5 @@
-import Piece from './Piece';
-import Position from './Position';
+import Piece from './piece';
+import Position from './position';
 import { Row, Column, Color } from './types';
 
 export default class King extends Piece {
@@ -8,7 +8,11 @@ export default class King extends Piece {
     }
 
     canMoveTo(position: Position): boolean {
-        return (Math.abs(this.position.getRow() - position.getRow()) <= 1) 
-        && (Math.abs(this.position.getColumn().charCodeAt(0)) - Math.abs(position.getColumn().charCodeAt(0)) <= 1);
+        const diffPosition = this.position.getRow() != position.getRow() || this.position.getColumn() != position.getColumn();
+
+        const kingLikeMove = Math.abs(this.position.getRow() - position.getRow()) <= 1 
+        && Math.abs(this.position.getColumn().charCodeAt(0)) - Math.abs(position.getColumn().charCodeAt(0)) <= 1
+
+        return kingLikeMove && diffPosition;
     }
 }

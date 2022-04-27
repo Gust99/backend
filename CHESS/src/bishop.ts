@@ -1,5 +1,5 @@
-import Piece from './Piece';
-import Position from './Position';
+import Piece from './piece';
+import Position from './position';
 import { Color, Row, Column } from './types';
 
 export default class Bishop extends Piece {
@@ -8,7 +8,11 @@ export default class Bishop extends Piece {
     }
 
     canMoveTo(position: Position): boolean {
-        return (Math.abs(this.position.getRow() - position.getRow()))
-        === (Math.abs(this.position.getColumn().charCodeAt(0) - position.getColumn().charCodeAt(0)));
+        const bishopLikeMove = Math.abs(this.position.getRow() - position.getRow())
+        === Math.abs(this.position.getColumn().charCodeAt(0) - position.getColumn().charCodeAt(0));
+
+        const diffPosition = this.position.getRow() != position.getRow() || this.position.getColumn() != position.getColumn();
+
+        return bishopLikeMove && diffPosition;
     }
 }

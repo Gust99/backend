@@ -1,5 +1,5 @@
-import Piece from './Piece';
-import Position from './Position';
+import Piece from './piece';
+import Position from './position';
 import { Color, Row, Column } from './types';
 
 export default class Queen extends Piece {
@@ -8,9 +8,14 @@ export default class Queen extends Piece {
     }
 
     canMoveTo(position: Position): boolean {
-        return (+(1 / Math.abs(this.position.getRow() - position.getRow()) === Infinity
-        || 1 / Math.abs(this.position.getColumn().charCodeAt(0) - position.getColumn().charCodeAt(0)) === Infinity) 
-        ^ +((Math.abs(this.position.getRow() - position.getRow()))
-        === (Math.abs(this.position.getColumn().charCodeAt(0) - position.getColumn().charCodeAt(0))))) === 1;
+        const bishopLikeMove = Math.abs(this.position.getRow() - position.getRow()) === 
+        Math.abs(this.position.getColumn().charCodeAt(0)- position.getColumn().charCodeAt(0));
+
+        const rookLikeMove = (+(this.position.getRow() - position.getRow() === 0)
+        ^ +(this.position.getColumn().charCodeAt(0)- position.getColumn().charCodeAt(0) === 0)) === 1
+
+        const diffPosition = this.position.getRow() != position.getRow() || this.position.getColumn() != position.getColumn();
+
+        return (+bishopLikeMove ^ +rookLikeMove) === 1 && diffPosition;
     }
 }
