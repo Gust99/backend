@@ -1,3 +1,5 @@
+import DBContext from "../DBContext";
+
 let { DataTypes } = require('sequelize');
 
 const User = DBContext.db.define('User', {
@@ -16,3 +18,5 @@ const User = DBContext.db.define('User', {
         allowNull: false
     }
 });
+
+module.exports = User;

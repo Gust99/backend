@@ -1,3 +1,3 @@
 module.exports.createModels = () => {
-    let User = require("./User");
+    let User = require("./dbModels/User");
 }

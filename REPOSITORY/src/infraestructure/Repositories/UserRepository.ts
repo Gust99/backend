@@ -1,4 +1,8 @@
-class UserRepository implements IUserRepository {
+import IUserRepository from "../../core/IRepositories/IUserRepository";
+import DBContext from "../DB/DBContext";
+import User from '../../core/models/User';
+
+export default class UserRepository implements IUserRepository {
 
     private db;
 

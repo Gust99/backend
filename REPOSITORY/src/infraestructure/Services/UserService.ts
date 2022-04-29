@@ -1,4 +1,9 @@
-class UserService implements IUserSerivce {
+import IUserService from '../../core/IServices/IUserService';
+import IUserRepository from '../../core/IRepositories/IUserRepository';
+import UserRepository from '../Repositories/UserRepository';
+import User from '../../core/models/User';
+
+export default class UserService implements IUserService {
     private repository: IUserRepository;
 
     constructor() {
@@ -6,7 +11,7 @@ class UserService implements IUserSerivce {
     }
 
     create(object: User) {
-        if(User.age > 21) {
+        if(object.username > '') {
             this.repository.create(object);
         }
     }

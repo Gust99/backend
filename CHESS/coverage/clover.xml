@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1651085120655" clover="3.2.0">
-  <project timestamp="1651085120655" name="All files">
+<coverage generated="1651089988841" clover="3.2.0">
+  <project timestamp="1651089988841" name="All files">
     <metrics statements="54" coveredstatements="49" conditionals="48" coveredconditionals="36" methods="18" coveredmethods="17" elements="120" coveredelements="102" complexity="0" loc="54" ncloc="54" packages="1" files="8" classes="8"/>
     <file name="bishop.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\CHESS\src\bishop.ts">
       <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
