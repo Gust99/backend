@@ -1,4 +1,4 @@
-import User from '../models/User';
+import User from '../Domain/User';
 
 export default interface IUserSerivce {
     create(object: User): void;

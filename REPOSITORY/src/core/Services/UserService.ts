@@ -1,6 +1,6 @@
 import IUserService from '../IServices/IUserService';
 import IUserRepository from '../IRepositories/IUserRepository';
-import User from '../models/User';
+import User from '../Domain/User';
 import { inject, injectable } from 'inversify';
 import { TYPES } from '../types';
 

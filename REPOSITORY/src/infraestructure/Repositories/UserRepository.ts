@@ -1,6 +1,6 @@
 import IUserRepository from "../../core/IRepositories/IUserRepository";
 import DBContext from "../DB/DBContext";
-import User from '../../core/models/User';
+import User from '../../core/Domain/User';
 import { injectable } from "inversify";
 import "reflect-metadata";
 
