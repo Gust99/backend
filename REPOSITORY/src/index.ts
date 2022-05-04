@@ -1,10 +1,11 @@
-import DBContext from './infraestructure/DB/DBContext';
-import IUserSerivce from './core/IServices/IUserService';
-import { myContainer } from "./inversify.config";
-import { TYPES } from './core/types';
+import "reflect-metadata";
+import DBContext from './infraestructure/DB_TYPE/DBContext';
 
-const dbContext = new DBContext();
+let app = require('./app');
+let port = 3000;
 
-let userService = myContainer.get<IUserSerivce>(TYPES.IUserService);
-
-userService.create({username: "Gustavo", password: "123"});
+const dbContext = new DBContext().initDB().then(() => {
+    app.listen(port, () => {
+        console.log('Server up.');
+    });
+});
