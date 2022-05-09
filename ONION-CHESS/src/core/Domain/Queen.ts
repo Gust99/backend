@@ -1,10 +1,10 @@
 import Piece from './Piece';
 import Position from './Position';
-import { Color } from './types';
+import { Color, PieceID } from './types';
 
 export default class Queen extends Piece {
-    constructor(position: Position, color: Color) {
-        super(position, 9, 'Queen', color);
+    constructor(id: PieceID, position: Position, color: Color) {
+        super(id, position, 9, 'Queen', color);
     }
 
     canMoveTo(position: Position): boolean {
