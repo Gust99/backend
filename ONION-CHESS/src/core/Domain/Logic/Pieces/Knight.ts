@@ -1,10 +1,10 @@
-import Piece from './Piece';
-import Position from './Position';
-import { Color, PieceID } from './types';
+import Piece from '../../abstracts/Piece';
+import Position from '../Position';
+import { PieceGameID } from '../types';
 
 export default class Knight extends Piece {
-    constructor(id: PieceID, position: Position, color: Color) {
-        super(id, position, 3, 'Knight', color);
+    constructor(id: PieceGameID, position: Position) {
+        super(id, 'Knight', 3, position);
     }
 
     canMoveTo(position: Position): boolean {

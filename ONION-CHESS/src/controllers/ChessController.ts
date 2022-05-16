@@ -2,7 +2,7 @@ import { TYPES } from '../core/types';
 import { Request, Response } from 'express';
 import { myContainer } from '../inversify.config';
 import IChessSerivce from '../core/IServices/IChessService';
-import Position from '../core/Domain/Position';
+import Position from '../core/Domain/Logic/Position';
 
 export default class ChessController {
     
@@ -20,9 +20,8 @@ export default class ChessController {
     static async move(request: Request, response: Response) {
         let params = request.body;
         let position = new Position(params.position.rank, params.position.file);
-        console.log(position);
         try {
-            let success = await ChessController.chessService.move(params.id, params.pieceID, params.piece, params.color, position);
+            let success = await ChessController.chessService.move(params.id, params.pieceID, position);
             response.status(200).send({success});
         } catch(err) {
             response.status(500).send({ msg: 'Error while creating user' });

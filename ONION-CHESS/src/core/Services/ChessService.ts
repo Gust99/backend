@@ -1,12 +1,12 @@
 import { inject, injectable } from 'inversify';
-import Chess from '../Domain/Chess';
+import Chess from '../Domain/Entities/Chess';
 import IChessRepository from '../IRepositories/IChessRepository';
 import IChessService from '../IServices/IChessService';
 import { TYPES } from '../types';
-import Game from '../Domain/Game';
-import Position from '../Domain/Position';
-import { Color, PieceID } from '../Domain/types';
-import GameStatus from '../Domain/GameStatus';
+import Game from '../Domain/Logic/Game';
+import Position from '../Domain/Logic/Position';
+import { Color, PieceGameID } from '../Domain/Logic/types';
+import GameStatus from '../Domain/interfaces/GameStatus';
 import IMoveRepository from '../IRepositories/IMoveRepository';
 
 @injectable()
@@ -26,7 +26,13 @@ export default class ChessService implements IChessService {
     async create(object: Chess) {
         let id = await this.repository.create(object)
         .then(res => {
-            let game = new Game();
+            let game = new Game({
+                pieces: [],
+                positions: [],
+                whiteKilledPieces: [],
+                blackKilledPieces: [],
+                whiteTurn: true
+            });
             game.start();
             ChessService.games.push({game: game, id: res});
             return res;
@@ -34,19 +40,18 @@ export default class ChessService implements IChessService {
         return id;
     }
 
-    async move(id: number, pieceID: PieceID, piece: string, color: Color, position: Position) {
+    async move(id: number, pieceID: PieceGameID, position: Position) {
         let success = ChessService.games.find(game => game.id === id)
-        ?.game.next(pieceID, piece, color, position) || false;
+        ?.game.next(pieceID, position) || false;
 
         if(success) {
-            await this.moveRepository.create(id, {
-                chess_id: id,
-                piece: piece,
-                color: color,
-                piece_id: pieceID,
-                rank: position.getRank(),
-                file: position.getFile()
-            });
+            // await this.moveRepository.create(id, {
+            //     // chess_id: id,
+            //     // piece: piece,
+            //     // piece_id: pieceID,
+            //     // rank: position.getRank(),
+            //     // file: position.getFile()
+            // });
         }
 
         return success;

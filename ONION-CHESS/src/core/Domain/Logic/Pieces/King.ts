@@ -1,10 +1,16 @@
-import Piece from './Piece';
-import Position from './Position';
-import { Color, PieceID } from './types';
+import Piece from '../../abstracts/Piece';
+import Position from '../Position';
+import { KingState, PieceGameID } from '../types';
 
 export default class King extends Piece {
-    constructor(id: PieceID, position: Position, color: Color) {
-        super(id, position, 999999, 'King', color);
+    private state: KingState = 'Free';
+
+    constructor(id: PieceGameID, position: Position) {
+        super(id, 'King', 999999, position);
+    }
+    
+    getState(): KingState {
+        return this.state;
     }
 
     canMoveTo(position: Position): boolean {

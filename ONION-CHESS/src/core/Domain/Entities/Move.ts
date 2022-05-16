@@ -1,4 +1,4 @@
-import { File, Rank } from './types';
+import { File, Rank } from '../Logic/types';
 
 export default interface Move {
     id?: number;

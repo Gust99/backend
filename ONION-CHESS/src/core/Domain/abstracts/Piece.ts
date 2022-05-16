@@ -1,13 +1,12 @@
-import Position from './Position';
-import { Color, PieceID } from './types';
+import Position from '../Logic/Position';
+import { Color, PieceGameID } from '../Logic/types';
 
 export default abstract class Piece {
     constructor(
-        protected id: PieceID,
-        protected position: Position,
-        protected value: number,
+        protected id: PieceGameID,
         protected name: string,
-        protected readonly color: Color
+        protected value: number,
+        protected position: Position
     ) {}
 
     moveTo(position: Position) {
@@ -15,15 +14,19 @@ export default abstract class Piece {
     }
 
     getColor(): Color {
-        return this.color;
+        return this.id.color;
     }
 
     getName(): string {
         return this.name;
     }
 
-    getID(): PieceID {
+    getID(): PieceGameID {
         return this.id;
+    }
+
+    getPosition(): Position {
+        return this.position;
     }
 
     abstract canMoveTo(position: Position): boolean

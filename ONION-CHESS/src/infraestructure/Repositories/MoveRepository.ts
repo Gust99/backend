@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { Repository, DataSource } from 'typeorm';
-import Move from "../../core/Domain/Move";
+import Move from "../../core/Domain/Entities/Move";
 import IMoveRepository from "../../core/IRepositories/IMoveRepository";
 import DBContext from "../DB/DBContext";
 import { MoveModel } from "../DB/DBModels/Move";
