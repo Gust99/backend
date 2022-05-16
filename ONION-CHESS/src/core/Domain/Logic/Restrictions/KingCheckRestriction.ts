@@ -12,19 +12,19 @@ export default class KingCheckRestriction {
         if(piece.getName() !== 'King') {
             const kingIndex = this.pieceMapper.getPieceIndex(5, piece.getColor(), pieces);
             
-            if(piece.getColor() === 'White') {
-                if(pieces[kingIndex].getPosition().getState().attacked === 'BlackAttack' 
-                || 
-                pieces[kingIndex].getPosition().getState().attacked === 'BothAttack') {
-                    return false;
-                }
-            } else {
-                if(pieces[kingIndex].getPosition().getState().attacked === 'WhiteAttack' 
-                || 
-                pieces[kingIndex].getPosition().getState().attacked === 'BothAttack') {
-                    return false;
-                }
-            }
+            // if(piece.getColor() === 'White') {
+            //     if(pieces[kingIndex].getPosition().getState().attacked === 'BlackAttack' 
+            //     || 
+            //     pieces[kingIndex].getPosition().getState().attacked === 'BothAttack') {
+            //         return false;
+            //     }
+            // } else {
+            //     if(pieces[kingIndex].getPosition().getState().attacked === 'WhiteAttack' 
+            //     || 
+            //     pieces[kingIndex].getPosition().getState().attacked === 'BothAttack') {
+            //         return false;
+            //     }
+            // }
 
             const positionsCopy = [...positions];
             const piecesCopy = [...pieces];

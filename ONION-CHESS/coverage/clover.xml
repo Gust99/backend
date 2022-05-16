@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1652719004182" clover="3.2.0">
+  <project timestamp="1652719004182" name="All files">
+    <metrics statements="457" coveredstatements="411" conditionals="222" coveredconditionals="187" methods="74" coveredmethods="67" elements="753" coveredelements="665" complexity="0" loc="457" ncloc="457" packages="5" files="25" classes="25"/>
+    <package name="Logic">
+      <metrics statements="133" coveredstatements="119" conditionals="11" coveredconditionals="9" methods="21" coveredmethods="16"/>
+      <file name="Game.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Game.ts">
+        <metrics statements="40" coveredstatements="33" conditionals="11" coveredconditionals="9" methods="8" coveredmethods="6"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="152" type="stmt"/>
+        <line num="30" count="256" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="307" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="11" type="cond" truecount="2" falsecount="1"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="41" count="11" type="cond" truecount="1" falsecount="0"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="47" count="10" type="stmt"/>
+        <line num="48" count="10" type="cond" truecount="0" falsecount="1"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="54" count="10" type="stmt"/>
+        <line num="60" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="67" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="82" count="7" type="stmt"/>
+        <line num="83" count="7" type="stmt"/>
+        <line num="84" count="7" type="stmt"/>
+        <line num="85" count="7" type="stmt"/>
+        <line num="88" count="7" type="stmt"/>
+        <line num="90" count="7" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+      </file>
+      <file name="Populator.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Populator.ts">
+        <metrics statements="82" coveredstatements="77" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="8" type="stmt"/>
+        <line num="29" count="64" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="107" count="1" type="stmt"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+        <line num="113" count="1" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="119" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="127" count="1" type="stmt"/>
+        <line num="128" count="1" type="stmt"/>
+        <line num="130" count="1" type="stmt"/>
+        <line num="131" count="1" type="stmt"/>
+      </file>
+      <file name="Position.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Position.ts">
+        <metrics statements="11" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="6"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="75" type="stmt"/>
+        <line num="10" count="75" type="stmt"/>
+        <line num="11" count="75" type="stmt"/>
+        <line num="15" count="421772" type="stmt"/>
+        <line num="19" count="110807" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="5019" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="62" type="stmt"/>
+        <line num="39" count="1580" type="stmt"/>
+      </file>
+    </package>
+    <package name="Logic.Pieces">
+      <metrics statements="44" coveredstatements="42" conditionals="46" coveredconditionals="42" methods="13" coveredmethods="12"/>
+      <file name="Bishop.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Pieces\Bishop.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="11" count="5734" type="stmt"/>
+        <line num="14" count="5734" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="5734" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="King.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Pieces\King.ts">
+        <metrics statements="8" coveredstatements="7" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="17" count="2090" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="2090" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="2090" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="Knight.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Pieces\Knight.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="11" count="4660" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="4660" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="4660" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="Pawn.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Pieces\Pawn.ts">
+        <metrics statements="11" coveredstatements="10" conditionals="18" coveredconditionals="14" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
+        <line num="11" count="9" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="5" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="3" type="cond" truecount="3" falsecount="0"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="Queen.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Pieces\Queen.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="11" count="2846" type="stmt"/>
+        <line num="14" count="2846" type="stmt"/>
+        <line num="17" count="2846" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="2846" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="Rook.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Pieces\Rook.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="11" count="4869" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="4869" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="4869" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="Logic.Restrictions">
+      <metrics statements="31" coveredstatements="26" conditionals="19" coveredconditionals="9" methods="4" coveredmethods="4"/>
+      <file name="BlockingRestriction.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Restrictions\BlockingRestriction.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="12" count="2415" type="stmt"/>
+        <line num="14" count="2415" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="825" type="stmt"/>
+        <line num="18" count="1590" type="stmt"/>
+      </file>
+      <file name="KingCheckRestriction.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Restrictions\KingCheckRestriction.ts">
+        <metrics statements="23" coveredstatements="18" conditionals="18" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="29" count="8" type="stmt"/>
+        <line num="30" count="8" type="stmt"/>
+        <line num="32" count="8" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
+        <line num="38" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="5" type="cond" truecount="3" falsecount="0"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="45" count="3" type="cond" truecount="2" falsecount="1"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="52" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="Logic.Utils">
+      <metrics statements="231" coveredstatements="206" conditionals="144" coveredconditionals="125" methods="27" coveredmethods="26"/>
+      <file name="AttackMapping.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\AttackMapping.ts">
+        <metrics statements="51" coveredstatements="41" conditionals="34" coveredconditionals="21" methods="11" coveredmethods="11"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="11" count="15" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="14" count="480" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="240" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="120" type="stmt"/>
+        <line num="17" count="120" type="stmt"/>
+        <line num="18" count="120" type="stmt"/>
+        <line num="20" count="7680" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="7680" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="120" type="cond" truecount="1" falsecount="1"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="120" type="cond" truecount="0" falsecount="1"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="29" count="120" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="120" type="cond" truecount="0" falsecount="1"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="120" type="stmt"/>
+        <line num="36" count="120" type="stmt"/>
+        <line num="37" count="120" type="stmt"/>
+        <line num="39" count="7680" type="cond" truecount="1" falsecount="1"/>
+        <line num="40" count="7680" type="cond" truecount="1" falsecount="1"/>
+        <line num="42" count="120" type="cond" truecount="1" falsecount="1"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="120" type="cond" truecount="0" falsecount="1"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="48" count="120" type="cond" truecount="1" falsecount="1"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="120" type="cond" truecount="0" falsecount="1"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="240" type="stmt"/>
+        <line num="56" count="15360" type="cond" truecount="1" falsecount="0"/>
+        <line num="57" count="2405" type="stmt"/>
+        <line num="58" count="2405" type="cond" truecount="1" falsecount="0"/>
+        <line num="59" count="817" type="stmt"/>
+        <line num="60" count="1214" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="660" type="cond" truecount="2" falsecount="0"/>
+        <line num="62" count="337" type="stmt"/>
+        <line num="63" count="337" type="stmt"/>
+        <line num="64" count="323" type="cond" truecount="0" falsecount="1"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="69" count="554" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="238" type="stmt"/>
+        <line num="71" count="316" type="cond" truecount="1" falsecount="0"/>
+        <line num="72" count="45" type="stmt"/>
+        <line num="83" count="15" type="stmt"/>
+        <line num="84" count="960" type="stmt"/>
+      </file>
+      <file name="DistanceCalculator.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\DistanceCalculator.ts">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="21250" type="stmt"/>
+        <line num="11" count="15376" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+      <file name="DownLeftTrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\DownLeftTrajectoryMapper.ts">
+        <metrics statements="17" coveredstatements="15" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="213" type="stmt"/>
+        <line num="9" count="213" type="stmt"/>
+        <line num="10" count="2514" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="138" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="69" type="stmt"/>
+        <line num="19" count="69" type="stmt"/>
+        <line num="21" count="69" type="stmt"/>
+        <line num="25" count="144" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="72" type="stmt"/>
+        <line num="27" count="72" type="stmt"/>
+        <line num="30" count="72" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="34" count="72" type="stmt"/>
+        <line num="37" count="72" type="stmt"/>
+      </file>
+      <file name="DownRightTrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\DownRightTrajectoryMapper.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="282" type="stmt"/>
+        <line num="9" count="282" type="stmt"/>
+        <line num="10" count="2467" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="211" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="122" type="stmt"/>
+        <line num="19" count="122" type="stmt"/>
+        <line num="21" count="89" type="stmt"/>
+        <line num="25" count="160" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="83" type="stmt"/>
+        <line num="27" count="83" type="stmt"/>
+        <line num="30" count="77" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="34" count="72" type="stmt"/>
+        <line num="37" count="72" type="stmt"/>
+      </file>
+      <file name="DownTrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\DownTrajectoryMapper.ts">
+        <metrics statements="17" coveredstatements="15" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="332" type="stmt"/>
+        <line num="9" count="332" type="stmt"/>
+        <line num="10" count="3720" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="388" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="244" type="stmt"/>
+        <line num="19" count="244" type="stmt"/>
+        <line num="21" count="144" type="stmt"/>
+        <line num="25" count="88" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="37" type="stmt"/>
+        <line num="27" count="37" type="stmt"/>
+        <line num="30" count="51" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="51" type="stmt"/>
+        <line num="32" count="51" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="LeftTrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\LeftTrajectoryMapper.ts">
+        <metrics statements="17" coveredstatements="15" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="330" type="stmt"/>
+        <line num="9" count="330" type="stmt"/>
+        <line num="10" count="295" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="295" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="229" type="stmt"/>
+        <line num="19" count="229" type="stmt"/>
+        <line num="21" count="66" type="stmt"/>
+        <line num="25" count="101" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="11" type="stmt"/>
+        <line num="27" count="11" type="stmt"/>
+        <line num="30" count="90" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="90" type="stmt"/>
+        <line num="32" count="90" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="PieceMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\PieceMapper.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="7" count="88" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="RightTrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\RightTrajectoryMapper.ts">
+        <metrics statements="17" coveredstatements="15" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="420" type="stmt"/>
+        <line num="9" count="420" type="stmt"/>
+        <line num="10" count="335" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="335" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="325" type="stmt"/>
+        <line num="19" count="325" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="25" count="95" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="5" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="30" count="90" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="90" type="stmt"/>
+        <line num="32" count="90" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="Trajectory.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\Trajectory.ts">
+        <metrics statements="36" coveredstatements="35" conditionals="28" coveredconditionals="28" methods="3" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="2415" type="stmt"/>
+        <line num="17" count="2415" type="stmt"/>
+        <line num="18" count="2415" type="stmt"/>
+        <line num="20" count="2415" type="stmt"/>
+        <line num="21" count="2415" type="stmt"/>
+        <line num="23" count="2415" type="stmt"/>
+        <line num="24" count="76821" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="2415" type="stmt"/>
+        <line num="28" count="77988" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="2415" type="cond" truecount="3" falsecount="0"/>
+        <line num="32" count="286" type="stmt"/>
+        <line num="35" count="2129" type="cond" truecount="3" falsecount="0"/>
+        <line num="36" count="216" type="stmt"/>
+        <line num="39" count="1913" type="cond" truecount="3" falsecount="0"/>
+        <line num="41" count="213" type="stmt"/>
+        <line num="44" count="1700" type="cond" truecount="3" falsecount="0"/>
+        <line num="45" count="282" type="stmt"/>
+        <line num="48" count="1418" type="cond" truecount="3" falsecount="0"/>
+        <line num="49" count="420" type="stmt"/>
+        <line num="52" count="998" type="cond" truecount="3" falsecount="0"/>
+        <line num="53" count="330" type="stmt"/>
+        <line num="56" count="668" type="cond" truecount="3" falsecount="0"/>
+        <line num="57" count="336" type="stmt"/>
+        <line num="60" count="332" type="cond" truecount="3" falsecount="0"/>
+        <line num="61" count="332" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+      </file>
+      <file name="UpLeftTrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\UpLeftTrajectoryMapper.ts">
+        <metrics statements="17" coveredstatements="15" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="216" type="stmt"/>
+        <line num="9" count="216" type="stmt"/>
+        <line num="10" count="1678" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="123" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="100" type="stmt"/>
+        <line num="19" count="100" type="stmt"/>
+        <line num="21" count="23" type="stmt"/>
+        <line num="25" count="116" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="57" type="stmt"/>
+        <line num="27" count="57" type="stmt"/>
+        <line num="30" count="59" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="59" type="stmt"/>
+        <line num="32" count="59" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+      </file>
+      <file name="UpRightTrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\UpRightTrajectoryMapper.ts">
+        <metrics statements="17" coveredstatements="15" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="286" type="stmt"/>
+        <line num="8" count="286" type="stmt"/>
+        <line num="9" count="3576" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="248" type="cond" truecount="3" falsecount="0"/>
+        <line num="17" count="122" type="stmt"/>
+        <line num="18" count="122" type="stmt"/>
+        <line num="20" count="126" type="stmt"/>
+        <line num="24" count="164" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="101" type="stmt"/>
+        <line num="26" count="101" type="stmt"/>
+        <line num="29" count="63" type="cond" truecount="1" falsecount="1"/>
+        <line num="30" count="63" type="stmt"/>
+        <line num="31" count="63" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+      <file name="UpTrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\Logic\Utils\UpTrajectoryMapper.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="336" type="stmt"/>
+        <line num="9" count="336" type="stmt"/>
+        <line num="10" count="4250" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="442" type="cond" truecount="3" falsecount="0"/>
+        <line num="18" count="234" type="stmt"/>
+        <line num="19" count="234" type="stmt"/>
+        <line num="21" count="208" type="stmt"/>
+        <line num="25" count="102" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="41" type="stmt"/>
+        <line num="27" count="41" type="stmt"/>
+        <line num="30" count="61" type="cond" truecount="2" falsecount="0"/>
+        <line num="31" count="60" type="stmt"/>
+        <line num="32" count="60" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="abstracts">
+      <metrics statements="18" coveredstatements="18" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="9"/>
+      <file name="Piece.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\abstracts\Piece.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="32" type="stmt"/>
+        <line num="7" count="32" type="stmt"/>
+        <line num="8" count="32" type="stmt"/>
+        <line num="9" count="32" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="17" count="2616" type="stmt"/>
+        <line num="21" count="1982" type="stmt"/>
+        <line num="25" count="240" type="stmt"/>
+        <line num="29" count="49536" type="stmt"/>
+      </file>
+      <file name="TrajectoryMapper.ts" path="C:\Users\Usuario\Desktop\BOOTCAMP\BACKEND\GITHUB\ONION-CHESS\src\core\Domain\abstracts\TrajectoryMapper.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="2415" type="stmt"/>
+        <line num="11" count="2415" type="stmt"/>
+        <line num="12" count="2415" type="stmt"/>
+        <line num="14" count="2415" type="stmt"/>
+        <line num="18" count="563" type="stmt"/>
+        <line num="19" count="9746" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+  </project>
+</coverage>

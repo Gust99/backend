@@ -7,7 +7,8 @@
     "start": "ts-node ./src/index.ts",
     "nodemon": "nodemon ./src/index.ts",
     "start-lint": "eslint --init",
-    "debug-ts": "node -r ts-node/register --inspect src/index.ts"
+    "debug-ts": "node -r ts-node/register --inspect src/index.ts",
+    "test": "jest --coverage"
   },
   "author": "",
   "license": "ISC",

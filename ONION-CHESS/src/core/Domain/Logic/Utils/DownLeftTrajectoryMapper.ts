@@ -8,19 +8,18 @@ export default class DownLeftTrajectoryMapper extends TrajectoryMapper {
         
         for(i = this.mappingStartPositionIndex - 1; i > this.mappingEndPositionIndex; i--) {
             if(
-                !(this.distanceCalculator.getRankDistance(positions[i].getRank(),target.getRank()) < 0)
+                (this.distanceCalculator.getRankDistance(piece.getPosition().getRank(), positions[i].getRank()) < 0)
                 &&
-                !(this.distanceCalculator.getFileDistance(positions[i].getFile(),target.getFile()) < 0)
+                (this.distanceCalculator.getFileDistance(piece.getPosition().getFile(), positions[i].getFile()) < 0)
+                &&
+                piece.canMoveTo(positions[i])
             ) {
-                continue;
-            }
-            if(!positions[i].getState().free && piece.getName() !== 'Knight') {
-                this.trajectory = [];
-                return this.trajectory;
-            }
-            if(piece.canMoveTo(positions[i])) {
+                if(!positions[i].getState().free && piece.getName() !== 'Knight') {
+                    this.trajectory = [];
+                    return this.trajectory;
+                }
                 this.trajectory.push(positions[i]);
-            } 
+            }
         }
 
         if(positions[i].getState().free) {
@@ -28,7 +27,7 @@ export default class DownLeftTrajectoryMapper extends TrajectoryMapper {
             return this.trajectory;
         }
 
-        if(this.getPieceFromPosition(positions[i], pieces)?.getColor() === piece.getColor()) {
+        if(this.getPieceFromPosition(positions[i], pieces)?.getColor() !== piece.getColor()) {
             this.trajectory.push(positions[i]);
             return this.trajectory;
         } else {

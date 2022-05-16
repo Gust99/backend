@@ -16,6 +16,10 @@ export default class Game {
         private status: GameStatus
     ) {}
 
+    getStatus(): GameStatus {
+        return this.status;
+    }
+
     start(): GameStatus {
         Populator.populate(this.status);
         return this.status;
@@ -23,22 +27,38 @@ export default class Game {
 
     next(pieceID: PieceGameID, position: Position): boolean {
         let targetPieceIndex = this.status.pieces.findIndex(pi => JSON.stringify(pi.getID()) === JSON.stringify(pieceID));
-        let currentPositionIndex = this.status.positions.findIndex(pos => JSON.stringify(pos) === JSON.stringify(this.status.pieces[targetPieceIndex].getPosition())); 
+        let currentPositionIndex = this.status.positions.findIndex(pos => pos.getFile() === this.status.pieces[targetPieceIndex].getPosition().getFile() && 
+                                                                    pos.getRank() === this.status.pieces[targetPieceIndex].getPosition().getRank()); 
         let targetPositionIndex = this.status.positions.findIndex(pos => (pos.getFile() === position.getFile() && pos.getRank() === position.getRank()));
 
         //PIECE AND POSITION FOUNDED
         if(targetPieceIndex === -1 || targetPositionIndex === -1) {
+            console.log('Not found');
             return false;
         }
 
         //CORRECT TURN
         if(+(pieceID.color === 'White') + +(this.status.whiteTurn) === 1) {
+            console.log('Incorrect turn');
             return false;
         }
 
         //POSITION IS PART OF PIECE SCOPE
         const positionOnPieceScope = this.status.pieces[targetPieceIndex].canMoveTo(position);
         if(!positionOnPieceScope) {
+            console.log('Not part of piece scope',positionOnPieceScope);
+            return false;
+        }
+
+        //PATH TO POSITION IS FREE
+        const pathAvailable = this.blockingRestriction.actionAvailable(
+            this.status.pieces[targetPieceIndex],
+            this.status.positions[targetPositionIndex],
+            this.status.positions,
+            this.status.pieces
+        );
+        if(!pathAvailable) {
+            console.log('Unreachable', pathAvailable);
             return false;
         }
 
@@ -53,17 +73,7 @@ export default class Game {
             currentPositionIndex,
             targetPositionIndex
         )) {
-            return false;
-        }
-
-        //PATH TO POSITION IS FREE
-        const pathAvailable = this.blockingRestriction.actionAvailable(
-            this.status.pieces[targetPieceIndex],
-            this.status.positions[targetPositionIndex],
-            this.status.positions,
-            this.status.pieces
-        );
-        if(!pathAvailable) {
+            console.log('King under attack');
             return false;
         }
 

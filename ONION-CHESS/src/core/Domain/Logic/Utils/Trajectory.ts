@@ -37,6 +37,7 @@ export default class Trajectory {
                         .mapTrajectory(piece, target, positions, pieces);
         }
         if(rankDistance < 0 && fileDistance < 0) {//DOWN & LEFT
+            // console.log('DOWN LEFT');
             return new DownLeftTrajectoryMapper(piecePositionIndex, targetPositionIndex)
                         .mapTrajectory(piece, target, positions, pieces);
         }
