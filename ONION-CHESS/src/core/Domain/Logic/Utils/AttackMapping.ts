@@ -8,6 +8,8 @@ export default class AttackMapping {
     private blockingChecker: IBlockingRestriction = new BlockingRestriction();
 
     mapAttack(pieces: Piece[], positions: Position[]) {
+        this.setPositionsToNoneAttack(positions);
+        
         pieces.forEach(piece => {
             if(piece.getName() === 'Pawn') {
                 if(piece.getColor() === 'White') {
@@ -18,16 +20,16 @@ export default class AttackMapping {
                     const leftAttackPosition = positions.find(pos => (pos.getRank() === attackRank && pos.getFile() === leftAttackFile));
                     const rightAttackPosition = positions.find(pos => (pos.getRank() === attackRank && pos.getFile() === rightAttackFile));
 
-                    if(leftAttackPosition?.getState() !== 'Free' && leftAttackPosition?.getState() !== 'Occupied') {
-                        leftAttackPosition?.setState('BothAttack');
-                    } else {
-                        leftAttackPosition.setState('WhiteAttack');
+                    if(leftAttackPosition?.getState().attacked === 'None') {
+                        leftAttackPosition.setAttackStatus('WhiteAttack');
+                    } else if(leftAttackPosition?.getState().attacked === 'BlackAttack') {
+                        leftAttackPosition.setAttackStatus('BothAttack');
                     }
 
-                    if(rightAttackPosition?.getState() !== 'Free' && rightAttackPosition?.getState() !== 'Occupied') {
-                        rightAttackPosition?.setState('BothAttack');
-                    } else {
-                        rightAttackPosition.setState('WhiteAttack');
+                    if(rightAttackPosition?.getState().attacked === 'None') {
+                        rightAttackPosition.setAttackStatus('WhiteAttack');
+                    } else if(rightAttackPosition?.getState().attacked === 'BlackAttack') {
+                        rightAttackPosition.setAttackStatus('BothAttack');
                     }
                 } else {
                     const attackRank = <Rank>piece.getPosition().getRank() - 8;
@@ -37,33 +39,47 @@ export default class AttackMapping {
                     const leftAttackPosition = positions.find(pos => (pos.getRank() === attackRank && pos.getFile() === leftAttackFile));
                     const rightAttackPosition = positions.find(pos => (pos.getRank() === attackRank && pos.getFile() === rightAttackFile));
 
-                    if(leftAttackPosition?.getState() !== 'Free' && leftAttackPosition?.getState() !== 'Occupied') {
-                        leftAttackPosition?.setState('BothAttack');
-                    } else {
-                        leftAttackPosition.setState('BlackAttack');
+                    if(leftAttackPosition?.getState().attacked === 'None') {
+                        leftAttackPosition.setAttackStatus('BlackAttack');
+                    } else if(leftAttackPosition?.getState().attacked === 'WhiteAttack') {
+                        leftAttackPosition.setAttackStatus('BothAttack');
                     }
 
-                    if(rightAttackPosition?.getState() !== 'Free' && rightAttackPosition?.getState() !== 'Occupied') {
-                        rightAttackPosition?.setState('BothAttack');
-                    } else {
-                        rightAttackPosition.setState('BlackAttack');
+                    if(rightAttackPosition?.getState().attacked === 'None') {
+                        rightAttackPosition.setAttackStatus('BlackAttack');
+                    } else if(rightAttackPosition?.getState().attacked === 'WhiteAttack') {
+                        rightAttackPosition.setAttackStatus('BothAttack');
                     }
                 }
             } else {
                 positions.forEach(pos => {
                     if(piece.canMoveTo(pos)) {
-                        if(this.blockingChecker.actionAvailable(piece, pos, positions)) {
-                            if(pos.getState() !== 'Free' && pos.getState() !== 'Occupied') {
-                                pos.setState('BothAttack');
-                            } else if(piece.getColor() === 'White') {
-                                pos.setState('WhiteAttack');
-                            } else {
-                                pos.setState('BlackAttack');
-                            }
+                        const pathToPositionExists = this.blockingChecker.actionAvailable(piece, pos, positions, pieces);
+                        if(pathToPositionExists) {
+                            this.blockingChecker.trajectory.forEach(pathPos => {
+                                if(piece.getColor() === 'White') {
+                                    if(pathPos.getState().attacked === 'None') {
+                                        pathPos.setAttackStatus('WhiteAttack');
+                                    } else if(pathPos.getState().attacked === 'BlackAttack') {
+                                        pathPos.setAttackStatus('BothAttack');
+                                    }
+                                } else {
+                                    if(pathPos.getState().attacked === 'None') {
+                                        pathPos.setAttackStatus('BlackAttack');
+                                    } else if(pathPos.getState().attacked === 'WhiteAttack') {
+                                        pathPos.setAttackStatus('BothAttack');
+                                    }
+                                }
+                            });
                         }
                     }
                 });
             }
+        });
+    }
+    setPositionsToNoneAttack(positions: Position[]) {
+        positions.forEach(pos => {
+            pos.setAttackStatus('None');
         });
     }
 }

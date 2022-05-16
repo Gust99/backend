@@ -14,5 +14,12 @@ export default abstract class TrajectoryMapper {
         this.trajectory = [];
     }
 
-    abstract mapTrajectory(piece: Piece, target: Position, positions: Position[]): Position[];
+    getPieceFromPosition(position: Position, pieces: Piece[]) {
+        return pieces.find(piece => {
+            return piece.getPosition().getRank() === position.getRank()
+            && piece.getPosition().getFile() === position.getFile()
+        });
+    }
+
+    abstract mapTrajectory(piece: Piece, target: Position, positions: Position[], pieces: Piece[]): Position[];
 }

@@ -12,8 +12,11 @@ export type PieceGameID = {
     color: Color
 }
 
-export type Attack = 'WhiteAttack' | 'BlackAttack' | 'BothAttack';
+export type Attack = 'WhiteAttack' | 'BlackAttack' | 'BothAttack' | 'None';
 
-export type PositionState = 'Free' | Attack | 'Occupied';
+export type PositionState = {
+    free: boolean,
+    attacked: Attack
+};
 
 export type KingState = 'Free' | 'Checked';

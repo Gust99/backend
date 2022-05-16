@@ -4,5 +4,6 @@ import ITrajectoryMapper from './ITrajectory';
 
 export default interface IBlockingRestriction {
     trajectoryMapper: ITrajectoryMapper;
-    actionAvailable(piece: Piece, position: Position, positions: Position[]): boolean;
+    trajectory: Position[];
+    actionAvailable(piece: Piece, position: Position, positions: Position[], pieces: Piece[]): boolean;
 }
