@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.23% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.23% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -107,37 +107,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">332x</span>
-<span class="cline-any cline-yes">332x</span>
-<span class="cline-any cline-yes">4336x</span>
+<span class="cline-any cline-yes">399x</span>
+<span class="cline-any cline-yes">399x</span>
+<span class="cline-any cline-yes">5164x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">304x</span>
-<span class="cline-any cline-yes">136x</span>
-<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-yes">356x</span>
+<span class="cline-any cline-yes">158x</span>
+<span class="cline-any cline-yes">158x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">168x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">196x</span>
-<span class="cline-any cline-yes">123x</span>
-<span class="cline-any cline-yes">123x</span>
+<span class="cline-any cline-yes">198x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">73x</span>
+<span class="cline-any cline-yes">241x</span>
+<span class="cline-any cline-yes">151x</span>
+<span class="cline-any cline-yes">151x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">73x</span>
+<span class="cline-any cline-yes">90x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">87x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">87x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Piece from '../../abstracts/Piece';
 import Position from '../Position';
@@ -167,10 +167,10 @@ export default class UpRightTrajectoryMapper extends TrajectoryMapper {
             return this.trajectory;
         }
 &nbsp;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if(this.getPieceFromPosition(positions[i], pieces)?.getColor() !== piece.getColor()
-        &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >piece.getName() != 'Pawn')</span> {
-<span class="cstat-no" title="statement not covered" >            this.trajectory.push(positions[i]);</span>
-<span class="cstat-no" title="statement not covered" >            return this.trajectory;</span>
+        if(this.getPieceFromPosition(positions[i], pieces)?.getColor() !== piece.getColor()
+        &amp;&amp; piece.getName() != 'Pawn') {
+            this.trajectory.push(positions[i]);
+            return this.trajectory;
         } else {
             this.trajectory = [];
         }
@@ -184,7 +184,7 @@ export default class UpRightTrajectoryMapper extends TrajectoryMapper {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri May 20 2022 12:29:05 GMT-0400 (Bolivia Time)
+                at Fri May 20 2022 14:06:58 GMT-0400 (Bolivia Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

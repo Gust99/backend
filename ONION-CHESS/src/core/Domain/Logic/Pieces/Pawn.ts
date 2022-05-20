@@ -72,7 +72,7 @@ export default class Pawn extends Piece {
 
     takeMove(position: Position) {
         if(position.getState().free) {
-            console.log('No piece to take');
+            console.log('No piece to take', position);
             return false;
         }
         if(this.getColor() === 'White') {

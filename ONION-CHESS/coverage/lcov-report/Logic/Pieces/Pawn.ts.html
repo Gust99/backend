@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.23% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/17</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">62.85% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>25/35</span>
+                <span class='fraction'>22/35</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.23% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/17</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -161,7 +161,7 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,7 +178,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,8 +189,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -221,12 +221,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -270,7 +270,7 @@ export default class Pawn extends Piece {
                         position.getFile().charCodeAt(0) - this.position.getFile().charCodeAt(0) === 0
                     )
                     ||
-                    this.takeMove(position)
+<span class="branch-2 cbranch-no" title="branch not covered" >                    this.takeMove(position)</span>
                 ) &amp;&amp; diffPosition;
             }
         } else {
@@ -307,13 +307,13 @@ export default class Pawn extends Piece {
 &nbsp;
     takeMove(position: Position) {
         if(position.getState().free) {
-            console.log('No piece to take');
+            console.log('No piece to take', position);
             return false;
         }
-        if(this.getColor() === 'White') {
-            return position.getRank() - this.position.getRank() === 1
-            &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >Math.abs(position.getFile().charCodeAt(0) - position.getFile().charCodeAt(0)) === 1;</span>
-        } else <span class="missing-if-branch" title="else path not taken" >E</span>{
+<span class="cstat-no" title="statement not covered" >        if(this.getColor() === 'White') {</span>
+<span class="cstat-no" title="statement not covered" >            return position.getRank() - this.position.getRank() === 1</span>
+            &amp;&amp; Math.abs(position.getFile().charCodeAt(0) - position.getFile().charCodeAt(0)) === 1;
+        } else {
 <span class="cstat-no" title="statement not covered" >            return position.getRank() - this.position.getRank() === -1</span>
             &amp;&amp; Math.abs(position.getFile().charCodeAt(0) - position.getFile().charCodeAt(0)) === 1;
         }
@@ -325,7 +325,7 @@ export default class Pawn extends Piece {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Fri May 20 2022 12:29:05 GMT-0400 (Bolivia Time)
+                at Fri May 20 2022 14:06:58 GMT-0400 (Bolivia Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

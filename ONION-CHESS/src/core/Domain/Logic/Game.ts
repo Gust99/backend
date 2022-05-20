@@ -65,7 +65,7 @@ export default class Game {
         //POSITION IS PART OF PIECE SCOPE
         const positionOnPieceScope = this.status.pieces[targetPieceIndex].canMoveTo(this.status.positions[targetPositionIndex]);
         if(!positionOnPieceScope) {
-            console.log('Not part of piece scope',positionOnPieceScope);
+            console.log('Not part of piece scope',this.status.pieces[targetPieceIndex],this.status.positions[targetPositionIndex]);
             return false;
         }
 
@@ -77,7 +77,7 @@ export default class Game {
             this.status.pieces
         );
         if(!pathAvailable) {
-            console.log('Unreachable', pathAvailable);
+            console.log('Unreachable', this.status.pieces[targetPieceIndex],this.status.positions[targetPositionIndex]);
             return false;
         }
 

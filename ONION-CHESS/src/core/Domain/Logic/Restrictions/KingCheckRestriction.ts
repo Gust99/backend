@@ -1,7 +1,6 @@
 import Piece from '../../abstracts/Piece';
 import Position from '../Position';
 import PieceMapper from '../Utils/PieceMapper';
-import King from '../Pieces/King';
 import AttackMapping from '../Utils/AttackMapping';
 
 export default class KingCheckRestriction {
