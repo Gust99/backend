@@ -27,7 +27,10 @@ export default class UpTrajectoryMapper extends TrajectoryMapper {
             return this.trajectory;
         }
 
-        if(this.getPieceFromPosition(positions[i], pieces)?.getColor() === piece.getColor()) {
+        const pieceOnTargetPosition = this.getPieceFromPosition(positions[i], pieces);
+
+        if(pieceOnTargetPosition?.getColor() !== piece.getColor()
+        && piece.getName() != 'Pawn') {
             this.trajectory.push(positions[i]);
             return this.trajectory;
         } else {

@@ -18,7 +18,7 @@ describe("Game Tests", () => {
         )).toBe(true);
     });
 
-    test("White move in Black turn", () => {
+    test("White move in Black turn, invalid", () => {
         expect(game.next(
             { teamID: 10, color: "White" },
             new Position(4,'B')
@@ -53,10 +53,17 @@ describe("Game Tests", () => {
         )).toBe(true);
     });
 
-    test("White rook to H5", () => {
+    test("White rook to H5, invalid", () => {
         expect(game.next(
             { teamID: 8, color: "White" },
             new Position(5,'H')
+        )).toBe(false);
+    });
+
+    test("White rook to H2, invalid", () => {
+        expect(game.next(
+            { teamID: 8, color: "White" },
+            new Position(2,'H')
         )).toBe(false);
     });
 
@@ -67,14 +74,14 @@ describe("Game Tests", () => {
         )).toBe(true);
     });
 
-    test("Black bishop to B4", () => {
+    test("Black bishop to B4, check", () => {
         expect(game.next(
             { teamID: 6, color: "Black" },
             new Position(4,'B')
         )).toBe(true);
     });
 
-    test("White pawn to B3", () => {
+    test("White pawn to B3, invalid", () => {
         expect(game.next(
             { teamID: 10, color: "White" },
             new Position(3,'B')
@@ -84,6 +91,20 @@ describe("Game Tests", () => {
     test("White pawn to C3", () => {
         expect(game.next(
             { teamID: 11, color: "White" },
+            new Position(3,'C')
+        )).toBe(true);
+    });
+
+    test("Black bishop to C3, takes white pawn", () => {
+        expect(game.next(
+            { teamID: 6, color: "Black" },
+            new Position(3,'C')
+        )).toBe(true);
+    });
+
+    test("White pawn to C3, takes black bishop", () => {
+        expect(game.next(
+            { teamID: 10, color: "White" },
             new Position(3,'C')
         )).toBe(true);
     });

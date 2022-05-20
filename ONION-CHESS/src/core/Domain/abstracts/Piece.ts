@@ -2,6 +2,8 @@ import Position from '../Logic/Position';
 import { Color, PieceGameID } from '../Logic/types';
 
 export default abstract class Piece {
+    protected taked = false;
+
     constructor(
         protected id: PieceGameID,
         protected name: string,
@@ -27,6 +29,14 @@ export default abstract class Piece {
 
     getPosition(): Position {
         return this.position;
+    }
+
+    getTaked(): boolean {
+        return this.taked;
+    }
+
+    setTaked(value: boolean) {
+        this.taked = value;
     }
 
     abstract canMoveTo(position: Position): boolean

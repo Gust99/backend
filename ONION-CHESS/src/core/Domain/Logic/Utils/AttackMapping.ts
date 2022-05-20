@@ -60,10 +60,10 @@ export default class AttackMapping {
                                 if(piece.getColor() === 'White') {
                                     if(pathPos.getState().attacked === 'None') {
                                         pathPos.setAttackStatus('WhiteAttack');
-                                        console.log(pathPos);
+                                       
                                     } else if(pathPos.getState().attacked === 'BlackAttack') {
                                         pathPos.setAttackStatus('BothAttack');
-                                        console.log(pathPos);
+                                        
                                     }
                                 } else {
                                     if(pathPos.getState().attacked === 'None') {

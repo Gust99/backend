@@ -11,20 +11,6 @@ export default class KingCheckRestriction {
     actionAvailable(piece: Piece, position: Position, pieces: Piece[], positions: Position[],targetPieceIndex: number, currentPositionIndex: number, targetPositionIndex: number) {
         if(piece.getName() !== 'King') {
             const kingIndex = this.pieceMapper.getPieceIndex(5, piece.getColor(), pieces);
-            
-            // if(piece.getColor() === 'White') {
-            //     if(pieces[kingIndex].getPosition().getState().attacked === 'BlackAttack' 
-            //     || 
-            //     pieces[kingIndex].getPosition().getState().attacked === 'BothAttack') {
-            //         return false;
-            //     }
-            // } else {
-            //     if(pieces[kingIndex].getPosition().getState().attacked === 'WhiteAttack' 
-            //     || 
-            //     pieces[kingIndex].getPosition().getState().attacked === 'BothAttack') {
-            //         return false;
-            //     }
-            // }
 
             const positionsCopy = [...positions];
             const piecesCopy = [...pieces];

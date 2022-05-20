@@ -12,18 +12,75 @@ export default class Pawn extends Piece {
 
         if(this.getColor() === 'White') {
             if(this.position.getRank() === 2) {
-                return (position.getRank() - this.position.getRank() === 1
-                || position.getRank() - this.position.getRank() === 2) && diffPosition;
+                return (
+                    (
+                        position.getRank() - this.position.getRank() === 1
+                        &&
+                        position.getFile().charCodeAt(0) - this.position.getFile().charCodeAt(0) === 0
+                    )
+                    ||
+                    (
+                        position.getRank() - this.position.getRank() === 2
+                        &&
+                        position.getFile().charCodeAt(0) - this.position.getFile().charCodeAt(0) === 0
+                    )
+                    ||
+                    this.takeMove(position)
+                ) && diffPosition;
             } else {
-                return position.getRank() - this.position.getRank() === 1 && diffPosition;
+                return (
+                    (
+                        position.getRank() - this.position.getRank() === 1
+                        &&
+                        position.getFile().charCodeAt(0) - this.position.getFile().charCodeAt(0) === 0
+                    )
+                    ||
+                    this.takeMove(position)
+                ) && diffPosition;
             }
         } else {
             if(this.position.getRank() === 7) {
-                return (position.getRank() - this.position.getRank() === -1
-                || position.getRank() - this.position.getRank() === -2) && diffPosition;
+                return (
+                    (
+                        position.getRank() - this.position.getRank() === -1
+                        &&
+                        position.getFile().charCodeAt(0) - this.position.getFile().charCodeAt(0) === 0
+                    )
+                    ||
+                    (
+                        position.getRank() - this.position.getRank() === -2
+                        &&
+                        position.getFile().charCodeAt(0) - this.position.getFile().charCodeAt(0) === 0
+                    )
+                    ||
+                    this.takeMove(position)
+                ) && diffPosition;
             } else {
-                return position.getRank() - this.position.getRank() === -1 && diffPosition;
+                return (
+                    (
+                        position.getRank() - this.position.getRank() === -1
+                        &&
+                        position.getFile().charCodeAt(0) - this.position.getFile().charCodeAt(0) === 0
+                    )
+                    ||
+                    this.takeMove(position)
+                ) && diffPosition;
             }
+        }
+        //ADD LOGIC TO ENABLE TAKING MOVES
+    }
+
+    takeMove(position: Position) {
+        if(position.getState().free) {
+            console.log('No piece to take');
+            return false;
+        }
+        if(this.getColor() === 'White') {
+            return position.getRank() - this.position.getRank() === 1
+            && Math.abs(position.getFile().charCodeAt(0) - position.getFile().charCodeAt(0)) === 1;
+        } else {
+            return position.getRank() - this.position.getRank() === -1
+            && Math.abs(position.getFile().charCodeAt(0) - position.getFile().charCodeAt(0)) === 1;
         }
     }
 }

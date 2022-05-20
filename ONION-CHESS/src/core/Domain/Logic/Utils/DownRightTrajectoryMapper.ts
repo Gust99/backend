@@ -27,7 +27,8 @@ export default class DownRightTrajectoryMapper extends TrajectoryMapper {
             return this.trajectory;
         }
 
-        if(this.getPieceFromPosition(positions[i], pieces)?.getColor() !== piece.getColor()) {
+        if(this.getPieceFromPosition(positions[i], pieces)?.getColor() !== piece.getColor()
+        && piece.getName() != 'Pawn') {
             this.trajectory.push(positions[i]);
             return this.trajectory;
         } else {
