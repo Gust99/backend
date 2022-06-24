@@ -11,7 +11,7 @@ amqp.connect('amqp://localhost', (error0, connection) => {
         }
 
         const queue = 'imentor/contracts';
-        const msg = 'Hello world!';
+        const msg = JSON.stringify({ user: 'Gustavo' });
 
         channel.assertQueue(queue, {
             durable: false
