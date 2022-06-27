@@ -18,9 +18,18 @@ export class UserService implements IUserService {
         let userCreated = await this.repository.create(user);
         return userCreated;
     }
-    async delete(userID: number): Promise<string> {
+    async delete(userID: string): Promise<string> {
         let userDeleted = await this.repository.delete(userID);
         return userDeleted;
     }
     
+    async getAll(): Promise<User[]> {
+        let users = await this.repository.getAll();
+        return users;
+    }
+
+    async find(nickname: string, fullname: string): Promise<User[]> {
+        const usersFound = await this.repository.find(nickname, fullname);
+        return usersFound;
+    };
 }
