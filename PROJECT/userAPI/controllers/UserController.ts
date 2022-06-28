@@ -8,28 +8,21 @@ export default class UserController {
     static userService = myContainer.get<IUserService>(TYPES.IUserService);
 
     static async create(request: Request, response: Response) {
-        let userCreated = await UserController.userService.create(request.body);
-        response.status(201).send({ message: userCreated });
+        const userCreated = await UserController.userService.create(request.body);
+        response.status(201).send({ data: userCreated });
     }
 
     static async delete(request: Request, response: Response) {
         const id = request.params.id as unknown as string;
-        let msg = await UserController.userService.delete(id);
-        response.status(200).send(msg);
+        const msg = await UserController.userService.delete(id);
+        response.status(202).send({message: msg});
     }
 
-    static async getAll(request: Request, response: Response) {
-        let allUsers = await UserController.userService.getAll();
-        response.status(200).send(allUsers);
-    }
+    static async getUsers(request: Request, response: Response) {
+        const nickname = <string><unknown>request.query.nickname;
+        const fullname = <string><unknown>request.query.fullname;
 
-    static async find(request: Request, response: Response) {
-        const nickname = <string>request.query.nickname || '';
-        const fullname = <string>request.query.fullname || '';
-
-        let usersFound = await UserController.userService.find(
-            nickname,
-            fullname
-        );
+        const allUsers = await UserController.userService.getUsers(nickname, fullname);
+        response.status(202).send({data: allUsers});
     }
 }

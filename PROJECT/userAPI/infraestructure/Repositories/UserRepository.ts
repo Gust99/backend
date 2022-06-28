@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import { Repository, DataSource } from 'typeorm';
+import { Repository, DataSource, QueryBuilder } from 'typeorm';
 import { IUserRepository } from "../../core/IRepositories/IUserRepository";
 import DBContext from "../DB/DBContext";
 import { UserModel } from "../DB/models/User";
@@ -12,10 +12,12 @@ export default class UserRepository implements IUserRepository {
 
     static db: DataSource;
     static repository: Repository<UserModel>;
+    static queryBuilder: QueryBuilder<UserModel>;
 
     constructor() {
         UserRepository.db = DBContext.db;
         UserRepository.repository = UserRepository.db.getRepository(UserModel);
+        UserRepository.queryBuilder = DBContext.db.createQueryBuilder();
     }
 
     //TYPE ORM POSTGRESQL
@@ -36,28 +38,29 @@ export default class UserRepository implements IUserRepository {
             const res = await UserRepository.repository.delete(user as UserModel);
             return 'User deleted';
         } catch(error) {
-            throw new BaseException(404,'User not found.');
+            throw new BaseException(404,'User not found');
         }
     }
 
-    async getAll(): Promise<User[]> {
+    async getUsers(nickname: string, fullname: string): Promise<User[]> {
         try {
-            const users = await UserRepository.repository.find();
+            let users: User[] = [];
+
+            if(!nickname && !fullname) {
+                users = await UserRepository.repository.find();
+            } else {
+                UserRepository.queryBuilder = DBContext.db.createQueryBuilder();
+                users = await UserRepository.queryBuilder
+                                .select('*')
+                                .from(UserModel, 'user')
+                                .where('user.nickname ~* :nickname', {nickname})
+                                .orWhere('user.fullname ~* :fullname', {fullname})
+                                .getRawMany();
+            }
+
             return users as User[];
         } catch(error) {
             throw new BaseException(410, 'No content');
-        }
-    }
-
-    async find(nickname: string, fullname: string): Promise<User[]> {
-        try {
-            const usersFound = await UserRepository.repository.findBy({
-                nickname: nickname,
-                fullname: fullname
-            });
-            return usersFound as User[];
-        } catch(error) {
-            throw new BaseException(404, 'Not found');
         }
     }
 }

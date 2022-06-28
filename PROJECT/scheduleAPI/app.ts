@@ -7,13 +7,13 @@ const cors = require('cors');
 
 const app = express();
 
-const UserRouter = require('./routes/UserRoute');
+const AthendanceRouter = require('./routes/AthendanceRoute');
 
 app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
-app.use('/', UserRouter);
+app.use('/', AthendanceRouter);
 
 app.use((
     err: BaseException,
