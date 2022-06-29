@@ -20,7 +20,7 @@ api.delete('/athendances/:id', async (req: Request, res: Response, next: NextFun
 });
 api.get('/athendances/user/:id', async (req: Request, res: Response, next: NextFunction) => {
     try {
-        await AthendanceController.getAll(req, res);
+        await AthendanceController.getAllbyUserId(req, res);
     } catch(error) {
         next(error);
     }

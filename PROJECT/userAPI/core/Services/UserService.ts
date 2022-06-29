@@ -27,4 +27,14 @@ export class UserService implements IUserService {
         const users = await this.repository.getUsers(nickname, fullname);
         return users;
     }
+
+    async getUserFullData(userID: string): Promise<User> {
+        const userData = await this.repository.getUserFullData(userID);
+        return userData;
+    }
+
+    async getUserByID(userID: string): Promise<User> {
+        const user = await this.repository.getUserByID(userID);
+        return user;
+    }
 }

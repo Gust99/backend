@@ -6,6 +6,7 @@ import { UserModel } from "../DB/models/User";
 import { User } from '../../core/Entities/user';
 import { BaseException } from "../../Handlers/Error/BaseException";
 import { v4 as uuidv4} from 'uuid';
+import axios from 'axios';
 
 @injectable()
 export default class UserRepository implements IUserRepository {
@@ -35,7 +36,7 @@ export default class UserRepository implements IUserRepository {
     async delete(userID: string): Promise<string> {
         try {
             const user = await UserRepository.repository.findOneBy({id: userID});
-            const res = await UserRepository.repository.delete(user as UserModel);
+            await UserRepository.repository.delete(user as UserModel);
             return 'User deleted';
         } catch(error) {
             throw new BaseException(404,'User not found');
@@ -61,6 +62,32 @@ export default class UserRepository implements IUserRepository {
             return users as User[];
         } catch(error) {
             throw new BaseException(410, 'No content');
+        }
+    }
+
+    async getUserFullData(userID: string): Promise<User> {
+        try {
+            const userAthendances = (await axios
+                .get(`http://localhost:3001/athendances/user/${userID}`))
+                    .data;
+            
+            const user = <User>(await UserRepository.repository.findOneBy({id: userID}));
+
+            user.athendanceList = userAthendances.data;
+            
+            return user;
+        } catch(error) {
+            throw new BaseException(404,'User not found');
+        }
+    }
+
+    async getUserByID(userID: string): Promise<User> {
+        try {
+            const user = <User>(await UserRepository.repository.findOneBy({id: userID}));
+            
+            return user;
+        } catch(error) {
+            throw new BaseException(404,'User not found');
         }
     }
 }

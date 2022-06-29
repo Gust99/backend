@@ -25,4 +25,14 @@ export default class UserController {
         const allUsers = await UserController.userService.getUsers(nickname, fullname);
         response.status(202).send({data: allUsers});
     }
+
+    static async getUserFullData(request: Request, response: Response) {
+        const userData = await UserController.userService.getUserFullData(request.params.id);
+        response.status(202).send({data: userData});
+    }
+
+    static async getUserByID(request: Request, response: Response) {
+        const user = await UserController.userService.getUserByID(request.params.id);
+        response.status(202).send({data: user});
+    }
 }

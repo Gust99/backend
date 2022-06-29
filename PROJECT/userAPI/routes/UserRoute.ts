@@ -25,5 +25,19 @@ api.get('/users', async (req: Request, res: Response, next: NextFunction) => {
         next(error);
     }
 });
+api.get('/users/detail/:id', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        await UserController.getUserFullData(req, res);
+    } catch(error) {
+        next(error);
+    }
+});
+api.get('/users/:id', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        await UserController.getUserByID(req, res);
+    } catch(error) {
+        next(error);
+    }
+});
 
 module.exports = api;

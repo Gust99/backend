@@ -14,17 +14,17 @@ export class AthendanceService implements IAthendanceService {
         this.repository = athendanceRepository;
     }
 
-    async create(user: Athendance): Promise<Athendance> {
-        const userCreated = await this.repository.create(user);
-        return userCreated;
+    async create(athendance: Athendance): Promise<Athendance> {
+        const athendanceCreated = await this.repository.create(athendance);
+        return athendanceCreated;
     }
     async delete(userID: string): Promise<string> {
-        const userDeleted = await this.repository.delete(userID);
-        return userDeleted;
+        const athendanceDeleted = await this.repository.delete(userID);
+        return athendanceDeleted;
     }
     
-    async getAll(): Promise<Athendance[]> {
-        const users = await this.repository.getAll();
+    async getAllbyUserId(userID: string): Promise<Athendance[]> {
+        const users = await this.repository.getAllbyUserId(userID);
         return users;
     }
 }
