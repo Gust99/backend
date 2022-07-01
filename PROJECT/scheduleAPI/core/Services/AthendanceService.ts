@@ -27,4 +27,9 @@ export class AthendanceService implements IAthendanceService {
         const users = await this.repository.getAllbyUserId(userID);
         return users;
     }
+
+    async deleteAllAthendancesByUserID(userID: string): Promise<string> {
+        const result = await this.repository.deleteAllAthendancesByUserID(userID);
+        return result;
+    }
 }

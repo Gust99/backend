@@ -34,13 +34,23 @@ export default class UserRepository implements IUserRepository {
     }
     
     async delete(userID: string): Promise<string> {
+        const user = await UserRepository.repository.findOneBy({id: userID});
+        
+        if(!user) { throw new BaseException(404,'User not found'); }
+
+        let result;
+        
         try {
-            const user = await UserRepository.repository.findOneBy({id: userID});
-            await UserRepository.repository.delete(user as UserModel);
-            return 'User deleted';
+            result = await axios.delete(`${process.env.SCHEDULE_API}/user/${userID}`);
         } catch(error) {
-            throw new BaseException(404,'User not found');
+            throw new BaseException(500, 'Internal server error');
         }
+            
+        if(result.status !== 202) { throw new BaseException(500, 'Internal server error'); }
+
+        await UserRepository.repository.delete(user as UserModel);
+            
+        return 'User deleted';
     }
 
     async getUsers(nickname: string, fullname: string): Promise<User[]> {
@@ -68,7 +78,7 @@ export default class UserRepository implements IUserRepository {
     async getUserFullData(userID: string): Promise<User> {
         try {
             const userAthendances = (await axios
-                .get(`http://localhost:3001/athendances/user/${userID}`))
+                .get(`${process.env.SCHEDULE_API}/user/${userID}`))
                     .data;
             
             const user = <User>(await UserRepository.repository.findOneBy({id: userID}));

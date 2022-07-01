@@ -11,7 +11,7 @@ export default class AthendanceRepository implements IAthendanceRepository {
     async create(athendance: Athendance): Promise<Athendance> {
         try {
             const user = (await axios
-                            .get(`http://localhost:3000/users/${athendance.userID}`))
+                            .get(`${process.env.USER_API}/${athendance.userID}`))
                                 .data;
 
             if(!user.data) { throw new BaseException(404,'User not found') }
@@ -49,6 +49,18 @@ export default class AthendanceRepository implements IAthendanceRepository {
             return athendances as Athendance[];
         } catch(error) {
             throw new BaseException(410, 'No content');
+        }
+    }
+
+    async deleteAllAthendancesByUserID(userID: string): Promise<string> {
+        try {
+            await AthendanceModel.deleteMany({
+                userID: userID
+            });
+
+            return 'All athendances deleted';
+        } catch(error) {
+            throw new BaseException(500, 'Internal server error');
         }
     }
 }

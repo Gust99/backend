@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import DBContext from './infraestructure/DB/DBContext';
+import 'dotenv/config';
 
 const app = require('./app');
 const port = 3001;

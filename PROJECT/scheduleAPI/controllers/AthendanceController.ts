@@ -22,4 +22,9 @@ export default class AthendanceController {
         const allUsers = await AthendanceController.athendanceService.getAllbyUserId(request.params.id);
         response.status(202).send({ data: allUsers });
     }
+
+    static async deleteAllAthendancesByUserID(request: Request, response: Response) {
+        const result = await AthendanceController.athendanceService.deleteAllAthendancesByUserID(request.params.id);
+        response.status(202).send({ message: result });
+    }
 }

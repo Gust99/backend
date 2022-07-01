@@ -25,5 +25,12 @@ api.get('/athendances/user/:id', async (req: Request, res: Response, next: NextF
         next(error);
     }
 });
+api.delete('/athendances/user/:id', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        await AthendanceController.deleteAllAthendancesByUserID(req, res);
+    } catch(error) {
+        next(error);
+    }
+});
 
 module.exports = api;
