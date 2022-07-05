@@ -1,11 +1,12 @@
 import amqp from 'amqplib';
 
 export default class Producer {
+    private static instance: Producer;
     private connection!: amqp.Connection;
     private channel!: amqp.Channel;
     private queue: string;
     
-    constructor(queue: string) {
+    private constructor(queue: string) {
         this.queue = queue;
     }
 
@@ -18,8 +19,8 @@ export default class Producer {
     }
 
     async sendData(data: string) {
-        await this.connect();
-        await this.createChannel();
+        await this.getConnection();
+        await this.getChannel();
 
         this.channel.assertQueue(this.queue, {
             durable: false
@@ -27,10 +28,30 @@ export default class Producer {
 
         this.channel.sendToQueue(this.queue, Buffer.from(data));
         console.log(" Payload Sent => %s", data);
+    }
 
-        setTimeout(() => {
-            this.connection.close();
-            process.exit(0);
-        }, 500);
+    static getInstance(queue: string): Producer {
+        console.log('PRODUCER',Producer.instance);
+        if(Producer.instance === undefined) {
+            Producer.instance = new Producer(queue);
+        }
+        console.log('PRODUCER',Producer.instance);
+        return Producer.instance;
+    }
+
+    async getConnection(): Promise<amqp.Connection> {
+        if(!this.connection) {
+            await this.connect();
+        }
+
+        return this.connection;
+    }
+
+    async getChannel(): Promise<amqp.Channel> {
+        if(!this.channel) {
+            await this.createChannel();
+        }
+
+        return this.channel;
     }
 }

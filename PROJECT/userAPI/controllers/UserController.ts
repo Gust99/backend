@@ -35,4 +35,11 @@ export default class UserController {
         const user = await UserController.userService.getUserByID(request.params.id);
         response.status(202).send({data: user});
     }
+
+    static async updateAthendancesCount(request: Request, response: Response) {
+        const userID = request.body.userID;
+        const count = request.body.count;
+        const result = await UserController.userService.updateAthendancesCount(userID, count);
+        response.status(202).send({message: result});
+    }
 }

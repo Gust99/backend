@@ -100,4 +100,17 @@ export default class UserRepository implements IUserRepository {
             throw new BaseException(404,'User not found');
         }
     }
+
+    async updateAthendancesCount(userID: string, count: number): Promise<string> {
+        try {
+            await UserRepository.repository.save({
+                id: userID,
+                athendance: count
+            });
+
+            return 'Athendances count created';
+        } catch(error) {
+            throw new BaseException(500, 'Update athendances count failed');
+        }
+    }
 }

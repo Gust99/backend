@@ -14,7 +14,7 @@ export class AthendanceService implements IAthendanceService {
         @inject(TYPES.IAthendanceRepository) athendanceRepository: IAthendanceRepository
     ) {
         this.repository = athendanceRepository;
-        this.amqpProducer = new Producer('athendances');
+        this.amqpProducer = Producer.getInstance('athendances');
     }
 
     async create(athendance: Athendance): Promise<Athendance> {

@@ -39,5 +39,12 @@ api.get('/users/:id', async (req: Request, res: Response, next: NextFunction) =>
         next(error);
     }
 });
+api.put('/users/athendance', async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        await UserController.updateAthendancesCount(req, res);
+    } catch(error) {
+        next(error);
+    }
+});
 
 module.exports = api;

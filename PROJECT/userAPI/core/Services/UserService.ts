@@ -37,4 +37,9 @@ export class UserService implements IUserService {
         const user = await this.repository.getUserByID(userID);
         return user;
     }
+
+    async updateAthendancesCount(userID: string, count: number): Promise<string> {
+        const result = await this.repository.updateAthendancesCount(userID, count);
+        return result;
+    }
 }
