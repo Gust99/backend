@@ -3,19 +3,25 @@ import { User } from '../Entities/user';
 import { IUserRepository } from '../IRepositories/IUserRepository';
 import { IUserService } from '../IServices/IUserService';
 import { TYPES } from '../types';
+// import ElasticService from './ElasticService';
 
 @injectable()
 export class UserService implements IUserService {
     private repository: IUserRepository;
+    // private elasticService!: ElasticService;
 
     constructor(
         @inject(TYPES.IUserRepository) userRepository: IUserRepository
     ) {
         this.repository = userRepository;
+        // this.elasticService = ElasticService.getInstance();
     }
 
     async create(user: User): Promise<User> {
         const userCreated = await this.repository.create(user);
+
+        // await this.elasticService.populateIndex([user]);
+
         return userCreated;
     }
     async delete(userID: string): Promise<string> {
